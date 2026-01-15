@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: bedroom.ma
-//Last modified: Thu, Jan 15, 2026 03:16:56 PM
+//Last modified: Thu, Jan 15, 2026 03:20:41 PM
 //Codeset: 1252
 requires maya "2026";
 currentUnit -l centimeter -a degree -t film;
@@ -9,13 +9,13 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202510291147-60ec9eda33";
 fileInfo "osv" "Windows 11 Education v2009 (Build: 26200)";
-fileInfo "UUID" "7016FBAE-414A-9707-5775-4BBD91C88FB6";
+fileInfo "UUID" "035891CC-441C-89D8-9F0B-2590DB93027F";
 fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "FD210777-460B-D8F8-78A0-AD870E9B182D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.239777117343175 2.2044739971855574 0.98271236556837582 ;
-	setAttr ".r" -type "double3" 0.97706821924329246 461.11048969514002 0 ;
+	setAttr ".t" -type "double3" 12.849561250369632 4.687726078608744 7.1441622715695869 ;
+	setAttr ".r" -type "double3" -15.222931780687926 778.71048969505011 -3.0619785274652976e-15 ;
 	setAttr ".rp" -type "double3" -4.4408920985006262e-16 2.2204460492503131e-16 -4.4408920985006262e-16 ;
 	setAttr ".rpt" -type "double3" 1.0124394072822167e-15 4.2834793434593218e-16 7.8518896965691013e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -176,20 +176,20 @@ createNode mesh -n "pCubeShape3" -p "pCube3";
 		0.58408684 -4.7696424 -12.498977 0.14144816 -4.7534494 -11.804139 0.1113573 -4.8694205 
 		-12.567959 0.15871599 -4.8516455 -11.777932 0.12459327;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "BC391AD4-4971-9D6E-DDB6-AF89DB0CE2E4";
+	rename -uid "171A6F22-4947-FAF3-E003-078346313506";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "D0254682-4D90-2EBA-9991-18BEABAEA1F0";
+	rename -uid "6E2413D1-4EFB-9C8A-127F-838DE08A7827";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B0D3BAB5-4550-8BD5-9AFA-7CBE230F177A";
+	rename -uid "06F6CC5B-4D1B-CBE9-2261-3B86F2A7DEBB";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F95EE0CA-483C-6E74-A7BB-B4B59480C721";
+	rename -uid "E9B06DEA-4E8B-96B3-B2FA-FBACAD5320C4";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "B36AECD6-4BAE-DFDC-9138-0BB9196C5806";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "CD627574-42CC-1ADE-1F0A-3EABFA645A22";
+	rename -uid "C03F4F91-47FC-0D9B-40C9-A4931AEA107F";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0A982EEF-4292-2C07-9077-4DA217141A33";
 	setAttr ".g" yes;
@@ -457,13 +457,13 @@ connectAttr "polyCube2.out" "pCubeShape2.i";
 connectAttr "pCube3_translateX.o" "pCube3.tx";
 connectAttr "pCube3_translateY.o" "pCube3.ty";
 connectAttr "pCube3_translateZ.o" "pCube3.tz";
+connectAttr "pCube3_scaleX.o" "pCube3.sx";
+connectAttr "pCube3_scaleY.o" "pCube3.sy";
+connectAttr "pCube3_scaleZ.o" "pCube3.sz";
 connectAttr "pCube3_visibility.o" "pCube3.v";
 connectAttr "pCube3_rotateX.o" "pCube3.rx";
 connectAttr "pCube3_rotateY.o" "pCube3.ry";
 connectAttr "pCube3_rotateZ.o" "pCube3.rz";
-connectAttr "pCube3_scaleX.o" "pCube3.sx";
-connectAttr "pCube3_scaleY.o" "pCube3.sy";
-connectAttr "pCube3_scaleZ.o" "pCube3.sz";
 connectAttr "polyExtrudeFace5.out" "pCubeShape3.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
