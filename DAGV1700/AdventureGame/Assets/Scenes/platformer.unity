@@ -454,6 +454,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 755224720}
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateWithFloatData
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimpleImageBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4115484662776647736, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1564126
@@ -1860,6 +1876,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 755224720}
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateWithFloatData
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649911237352474205, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
+      propertyPath: triggerEnterMatches.Array.data[0].workEvent.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SimpleImageBehaviour, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4115484662776647736, guid: d384f2cc014eb2a4d963afd31f297063, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.9026594
@@ -2556,6 +2588,7 @@ GameObject:
   - component: {fileID: 1679575279}
   - component: {fileID: 1679575284}
   - component: {fileID: 1679575285}
+  - component: {fileID: 1679575286}
   m_Layer: 6
   m_Name: pixil-frame-0_0
   m_TagString: Untagged
@@ -2578,7 +2611,7 @@ MonoBehaviour:
   startEvent:
     m_PersistentCalls:
       m_Calls: []
-  nameIdObj: {fileID: 11400000, guid: f7b05ed2186414f76b7648e4d51b4ad5, type: 2}
+  nameIdObj: {fileID: 0}
   holdTime: 3
   triggerEnterMatches:
   - nameIdObj: {fileID: 11400000, guid: f7b05ed2186414f76b7648e4d51b4ad5, type: 2}
@@ -2611,13 +2644,13 @@ MonoBehaviour:
             m_StringArgument: this is space cowboy reporting in
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 793045590}
+        - m_Target: {fileID: 1679575286}
           m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: set_clip
-          m_Mode: 2
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: d825e73598c0230468dd2b21f83df645, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: this is space cowboy reporting in
@@ -2661,7 +2694,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.35, z: 0.2}
+  m_Size: {x: 0.7, y: 0.35, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &1679575281
 BoxCollider:
@@ -2860,6 +2893,103 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &1679575286
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679575278}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: d825e73598c0230468dd2b21f83df645, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.711
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1688350562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,12 +3619,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 755224720}
     - target: {fileID: 4450146989791506389, guid: 7e1f5386b3467524690e7d518a0fdf9f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.797
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450146989791506389, guid: 7e1f5386b3467524690e7d518a0fdf9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.99
       objectReference: {fileID: 0}
     - target: {fileID: 4450146989791506389, guid: 7e1f5386b3467524690e7d518a0fdf9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.35
+      value: 3.3074
       objectReference: {fileID: 0}
     - target: {fileID: 4450146989791506389, guid: 7e1f5386b3467524690e7d518a0fdf9f, type: 3}
       propertyPath: m_LocalPosition.z
