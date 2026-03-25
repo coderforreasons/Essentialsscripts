@@ -3082,19 +3082,31 @@ MonoBehaviour:
     delayedEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 936084046}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
+        - m_Target: {fileID: 936084048}
+          m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_MethodName: SetText
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: what is this object?
             m_BoolArgument: 0
           m_CallState: 2
-  triggerExitMatches: []
+  triggerExitMatches:
+  - nameIdObj: {fileID: 0}
+    canRepeat: 0
+    repeatTime: 0
+    workEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    repeatEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    delayedEvent:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!65 &1679575280
 BoxCollider:
   m_ObjectHideFlags: 0
