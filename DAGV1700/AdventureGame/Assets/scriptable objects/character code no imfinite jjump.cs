@@ -25,7 +25,7 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
     private Transform thisTransform;
-    private int jumpCount;
+    public int jumpCount;
 
     //add a roll to the character controller
    
@@ -38,7 +38,7 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
-        jumpCount = jumpcount.value;
+        
 
     }
 
@@ -49,6 +49,7 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     {
         MoveCharacter();
         controller.Move(velocity * Time.deltaTime);
+        jumpCount = jumpcount.value;
         ApplyGravity();
         KeepCharacterOnXAxis();
     }
@@ -72,11 +73,11 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
 
         }
 
-        else if (Input.GetButtonDown("Jump") && jumpCount > 0)
+        else if (Input.GetButtonDown("Jump") && jumpCount > 0 && !controller.isGrounded)
         {
 
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
-            jumpCount -= 1;
+            jumpcount.value -= 1;
 
         }
     }
