@@ -30,8 +30,10 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     public int jumpCount;
     public int ammocounterCount;
     private Transform bulletloc;
-    public GameObject bullets_0;
     private float bulletx;
+    private Vector3 bulletvoc;
+    public GameObject Bullets_0;
+   
     //add a roll to the character controller
    
     
@@ -43,7 +45,8 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
-        bulletloc = bullets_0.GetComponent<Transform>();
+
+        
 
     }
 
@@ -53,15 +56,19 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     private void Update()
     {
         MoveCharacter();
+        Bullets_0 = GameObject.Find("bullets_0");
+        bulletloc = Bullets_0.GetComponent<Transform>();
         controller.Move(velocity * Time.deltaTime);
         jumpCount = jumpcount.value;
         ammocounterCount = ammocounter.value;
         ApplyGravity();
         KeepCharacterOnXAxis();
+        bulletx = bulletloc.transform.position.x;
        
         shooting();
-        bulletx = bulletloc.position.x + 20;
-
+        bulletvoc.x = bulletloc.position.x + 4f;
+        bulletloc = Bullets_0.transform.position.x;
+        Bullets_0.transform.position = new Vector3(bulletvoc.x, 0f, 0f);
     }
 
     /// <summary>
@@ -127,9 +134,9 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
 
     private void shooting()
     {
-        if (Input.GetKeyDown("KeyCode.Return") && ammocounterCount > 0)
+        if (Input.GetKeyDown("f") && ammocounterCount > 0)
         {
-            bulletloc = thisTransform.position; 
+            bulletloc = thisTransform; 
             
 
         }
