@@ -66,8 +66,7 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
         bulletx = bulletloc.transform.position.x;
        
         shooting();
-        bulletvoc.x = bulletloc.position.x + 4f;
-        bulletloc = Bullets_0.transform.position.x;
+        bulletvoc.x = bulletloc.position.x + 1;
         Bullets_0.transform.position = new Vector3(bulletvoc.x, 0f, 0f);
     }
 
@@ -136,8 +135,8 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
     {
         if (Input.GetKeyDown("f") && ammocounterCount > 0)
         {
-            bulletloc = thisTransform; 
-            
+            bulletloc = thisTransform;
+            ammocounter.value -= 1;
 
         }
 
