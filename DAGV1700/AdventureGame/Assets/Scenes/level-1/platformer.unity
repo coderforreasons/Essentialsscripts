@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548938579}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58d59def985664bab87e7896af0357dc, type: 3}
   m_Name: 
@@ -1503,8 +1503,57 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 2.5
   gravity: -9.81
+  bullmovespeed: 7
   jumpcount: {fileID: 11400000, guid: ab178dfa39553c14abd60dba7168d1e1, type: 2}
   jumpCount: 0
+--- !u!114 &949078344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548938579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a28a400391344b9c88e28b4820b5ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHoldTime: 0.1
+  awakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  startEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: ab178dfa39553c14abd60dba7168d1e1, type: 2}
+        m_TargetAssemblyTypeName: IntData, Assembly-CSharp
+        m_MethodName: SetValue
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEnterRepeatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEnterEndEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerHoldTime: 0.01
+  repeatHoldTime: 0.01
+  exitHoldTime: 0.01
+  canRepeat: 0
+  repeatTimes: 10
 --- !u!114 &957609744 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2902167005261951756, guid: e364c1b692c3e2e4fa097264b5d95d6c, type: 3}
@@ -2366,7 +2415,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242310480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c956dfee3a37a45dd99f9f346b9ff541, type: 3}
   m_Name: 
@@ -2837,6 +2886,18 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: what is this object?
             m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1242310485}
+          m_TargetAssemblyTypeName: UnityEngine.BoxCollider, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: what is this object?
+            m_BoolArgument: 1
           m_CallState: 2
   triggerExitMatches:
   - nameIdObj: {fileID: 0}
@@ -3754,6 +3815,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7667078751936258657, guid: 9c0e929a150f5cb4a9da045c75a58a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 949078340}
+    - targetCorrespondingSourceObject: {fileID: 7667078751936258657, guid: 9c0e929a150f5cb4a9da045c75a58a59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 949078344}
     - targetCorrespondingSourceObject: {fileID: 7202885046643174700, guid: 9c0e929a150f5cb4a9da045c75a58a59, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1070771328}

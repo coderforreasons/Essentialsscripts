@@ -1,15 +1,9 @@
 using UnityEngine;
-using UnityEditor;
 
-/// <summary>
-/// The SimpleCharacterController class controls basic movement of a 2D platformer character.
-/// This includes horizontal movement and jumping, adding gravity, and maintaining character position on the x-axis.
-/// </summary>
-[Tooltip("Controls basic movement of a 2D platformer character.")]
-[RequireComponent(typeof(CharacterController))]
-public class character_code_no_imfinite_jjump : MonoBehaviour
+
+public class charactercontrollercowboy : MonoBehaviour
 {
-    [Tooltip("The speed at which the character moves horizontally.")]
+
     public float moveSpeed = 5f;
 
     [Tooltip("The upward force applied when the character jumps.")]
@@ -20,57 +14,58 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
 
     public float bullmovespeed = 7f;
 
-    
-    
-    public IntData jumpcount;
+
+
+
+    public IntData ammocounter;
     private CharacterController controller;
     private Vector3 velocity;
     private Transform thisTransform;
-    public int jumpCount;
-   
-    //add a roll to the character controller
-   
-    
+    public int ammocounterCount;
+    private Transform bulletloc;
+    private float bulletx;
+    private Vector3 bulletvoc;
+    public GameObject Bullets_0;
+    public Collider bulletco;
 
-    /// <summary>
-    /// Initialize required components.
-    /// </summary>
-    private void Start()
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
-
-        
+        Bullets_0 = GameObject.Find("bullets_0");
+        bulletco = Bullets_0.GetComponent<Collider>();
 
     }
 
-    /// <summary>
-    /// Controls character movement and position every frame.
-    /// </summary>
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         MoveCharacter();
-     
+        
+        bulletloc = Bullets_0.GetComponent<Transform>();
         controller.Move(velocity * Time.deltaTime);
-        jumpCount = jumpcount.value;
-       
+        ammocounterCount = ammocounter.value;
         ApplyGravity();
         KeepCharacterOnXAxis();
-       
+        bulletx = bulletloc.transform.position.x;
+
+        shooting();
+        bulletvoc.x = bulletloc.position.x + 1;
+        Bullets_0.transform.position = new Vector3(bulletvoc.x, 0f, 0f);
     }
 
-    /// <summary>
-    /// Handles horizontal movement and jumping.
-    /// </summary>
+
     private void MoveCharacter()
     {
-        
+
         // Handle horizontal movement
         var moveInput = Input.GetAxis("Horizontal");
         var move = new Vector3(moveInput, 0f, 0f) * (moveSpeed * Time.deltaTime);
         controller.Move(move);
 
-        
+
         // Handle jumping
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
         {
@@ -78,18 +73,8 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
 
         }
 
-        else if (Input.GetButtonDown("Jump") && jumpCount > 0 && !controller.isGrounded)
-        {
 
-            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
-            jumpcount.value -= 1;
-
-        }
     }
-
-    /// <summary>
-    /// Defines the character's behavior under gravity.
-    /// </summary>
     private void ApplyGravity()
     {
         // Apply gravity when off the ground
@@ -107,18 +92,28 @@ public class character_code_no_imfinite_jjump : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    /// <summary>
-    /// Ensures the character remains on the x-axis.
-    /// </summary>
     public void KeepCharacterOnXAxis()
     {
         // Lock the z-axis position to maintain 2D movement
-        
+
         var currentPosition = thisTransform.position;
         currentPosition.z = 0;
         thisTransform.position = currentPosition;
     }
 
 
+    private void shooting()
+    {
+        if (Input.GetKeyDown("f") && ammocounterCount > 0)
+        {
+            bulletco.isTrigger enabled;
+            bulletloc = thisTransform;
+            ammocounter.value -= 1;
 
+        }
+
+
+
+
+    }
 }
