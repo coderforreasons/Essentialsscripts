@@ -26,7 +26,8 @@ public class charactercontrollercowboy : MonoBehaviour
     private float bulletx;
     private Vector3 bulletvoc;
     public GameObject Bullets_0;
-    public Collider bulletco;
+    public GameObject Art;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +36,8 @@ public class charactercontrollercowboy : MonoBehaviour
         controller = GetComponent<CharacterController>();
         thisTransform = transform;
         Bullets_0 = GameObject.Find("bullets_0");
-        bulletco = Bullets_0.GetComponent<Collider>();
+        Art = GameObject.Find("playerart");
+        Art.GetComponent<Animator>().SetBool("space", true);
 
     }
 
@@ -106,7 +108,8 @@ public class charactercontrollercowboy : MonoBehaviour
     {
         if (Input.GetKeyDown("f") && ammocounterCount > 0)
         {
-            bulletco.isTrigger enabled;
+            Bullets_0.GetComponent<BoxCollider>().enabled = true;
+            Bullets_0.GetComponent<SpriteRenderer>().enabled = true;
             bulletloc = thisTransform;
             ammocounter.value -= 1;
 

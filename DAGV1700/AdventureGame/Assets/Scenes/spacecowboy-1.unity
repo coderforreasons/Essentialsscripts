@@ -762,6 +762,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &730053992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3743251813130934613, guid: 9c0e929a150f5cb4a9da045c75a58a59, type: 3}
+  m_PrefabInstance: {fileID: 2138955960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &792092685 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7667078751936258657, guid: 9c0e929a150f5cb4a9da045c75a58a59, type: 3}
@@ -791,6 +796,7 @@ MonoBehaviour:
   ammocounter: {fileID: 11400000, guid: 6a7121fc4d6010b4baee80796da1af34, type: 2}
   ammocounterCount: 0
   Bullets_0: {fileID: 374738984510442272}
+  Art: {fileID: 730053992}
 --- !u!1001 &892878144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1421,6 +1427,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 374738984510442275}
+          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     repeatEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -1449,6 +1467,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.44, y: 0.11, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!212 &374738984510442275 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2823518468604545470, guid: 5133fb61100f3ce4c9d556dff952d4bd, type: 3}
+  m_PrefabInstance: {fileID: 374738984510442271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &374738984510442277
 Rigidbody:
   m_ObjectHideFlags: 0
